@@ -1,0 +1,76 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "eventType": "PACKET_TRANSFER",
+      "startTime": "2024-01-10T10:00:00",
+      "source": "DeviceA",
+      "destination": "RouterA",
+      "data": "Hello, RouterA!"
+    },
+    {
+      "id": "2",
+      "eventType": "PACKET_TRANSFER",
+      "startTime": "2024-01-10T10:01:00",
+      "source": "RouterA",
+      "destination": "RouterB",
+      "data": "Hello, RouterB!"
+    },
+    {
+      "id": "3",
+      "eventType": "PACKET_TRANSFER",
+      "startTime": "2024-01-10T10:02:00",
+      "source": "RouterB",
+      "destination": "DeviceB",
+      "data": "Hello, DeviceB!"
+    },
+    {
+      "id": "4",
+      "eventType": "DEVICE_FAILURE",
+      "startTime": "2024-01-10T10:10:00",
+      "device": "RouterC",
+      "status": "FAILED"
+    }
+  ],
+  "devices": [
+    {
+      "id": "DeviceA",
+      "type": "EndDevice"
+    },
+    {
+      "id": "DeviceB",
+      "type": "EndDevice"
+    },
+    {
+      "id": "RouterA",
+      "type": "Router"
+    },
+    {
+      "id": "RouterB",
+      "type": "Router"
+    },
+    {
+      "id": "RouterC",
+      "type": "Router"
+    }
+  ],
+  "connections": [
+    {
+      "source": "DeviceA",
+      "destination": "RouterA",
+      "type": "Ethernet"
+    },
+    {
+      "source": "RouterA",
+      "destination": "RouterB",
+      "type": "Ethernet",
+      "status": "ACTIVE"
+    },
+    {
+      "source": "RouterB",
+      "destination": "DeviceB",
+      "type": "Ethernet",
+      "status": "ACTIVE"
+    }
+  ]
+}
