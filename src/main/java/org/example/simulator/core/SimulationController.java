@@ -19,7 +19,7 @@ public class SimulationController {
         this.dataLossCount = 0;
     }
 
-    public static synchronized SimulationController getInstance(List<Event> events, Network network) {
+    public static SimulationController getInstance(List<Event> events, Network network) {
         if (instance == null) {
             instance = new SimulationController(events, network);
         }
