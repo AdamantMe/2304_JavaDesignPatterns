@@ -66,9 +66,19 @@
       <option name="presentableId" value="Default" />
       <updated>1704908044088</updated>
     </task>
+    <task id="LOCAL-00001" summary="Toska's changes">
+      <created>1705070488870</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705070488870</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Toska's changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Toska's changes" />
   </component>
 </project>

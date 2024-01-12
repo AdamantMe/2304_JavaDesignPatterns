@@ -23,9 +23,11 @@ public class Main {
             Network network = JsonParser.parseNetwork(jsonObject, deviceFactory);
             List<Event> events = JsonParser.parseEvents(jsonObject.getJSONArray("events"));
 
-            // Use the Singleton pattern to get an instance of SimulationController
             SimulationController simulationController = SimulationController.getInstance(events, network);
             simulationController.runSimulation();
+
+            System.out.println("Total data loss count: " + simulationController.getDataLossCount());
+
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Failed to run the simulation: " + e.getMessage());

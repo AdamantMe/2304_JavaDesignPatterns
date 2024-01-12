@@ -1,13 +1,12 @@
+// Network.java
 package org.example.simulator.network;
 
 import org.example.simulator.core.Event;
-import org.example.simulator.core.SimulationController;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Network {
-
     private Map<String, Device> devices = new HashMap<>();
     private Map<String, String> connections = new HashMap<>();
 
@@ -43,11 +42,6 @@ public class Network {
                             break;
                         }
                     }
-
-                    // Check for data loss based on SimulationController
-                    if (shouldSimulateDataLoss()) {
-                        handleDataLoss(event);
-                    }
                 } else {
                     System.out.println("Packet transfer event is missing required information.");
                 }
@@ -58,21 +52,5 @@ public class Network {
             System.out.println("Error processing event: " + e.getMessage());
         }
     }
-
-    // Method to determine if data loss should be simulated
-    private boolean shouldSimulateDataLoss() {
-        // Your logic to determine when data loss should occur
-        // Example: Simulate data loss 10% of the time
-        return Math.random() < 0.1;
-    }
-
-    // Method to handle data loss
-    private void handleDataLoss(Event event) {
-        // Your logic to handle data loss
-        // Example: Log the event as data loss
-        System.out.println("Data loss detected. Event: " + event.toString());
-
-        // Increment data loss count in SimulationController
-        SimulationController.getInstance(null, null).handleDataLoss(event);
-    }
 }
+
