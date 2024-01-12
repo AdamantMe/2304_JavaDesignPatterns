@@ -23,7 +23,8 @@ public class Main {
             Network network = JsonParser.parseNetwork(jsonObject, deviceFactory);
             List<Event> events = JsonParser.parseEvents(jsonObject.getJSONArray("events"));
 
-            SimulationController simulationController = new SimulationController(events, network);
+            // Use the Singleton pattern to get an instance of SimulationController
+            SimulationController simulationController = SimulationController.getInstance(events, network);
             simulationController.runSimulation();
         } catch (Exception e) {
             e.printStackTrace();
