@@ -1,36 +1,58 @@
 package org.example;
 
-import org.example.simulator.core.Event;
-import org.example.simulator.core.SimulationController;
-import org.example.simulator.network.DeviceFactory;
-import org.example.simulator.network.Network;
-import org.example.simulator.utils.JsonParser;
-import org.json.JSONObject;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            String jsonFilePath = "src/main/resources/simulation_config.json";
-            String jsonContent = new String(Files.readAllBytes(Paths.get(jsonFilePath)));
-            JSONObject jsonObject = new JSONObject(jsonContent);
 
-            DeviceFactory deviceFactory = new DeviceFactory();
+        String filePath = "src/Topology";
+        String deviceType = "devices";
+        String connectionType = "connections";
 
-            Network network = JsonParser.parseNetwork(jsonObject, deviceFactory);
-            List<Event> events = JsonParser.parseEvents(jsonObject.getJSONArray("events"));
+        // Create a DeviceFactory & connection factory
+        DeviceFactory deviceFactory = new DeviceFactory();
+        ConnectionFactory connectionFactory = new ConnectionFactory();
 
-            SimulationController simulationController = SimulationController.getInstance(events, network);
-            simulationController.runSimulation();
 
-            System.out.println("Total data loss count: " + simulationController.getDataLossCount());
+        // Create a DeviceBuilder and pass the DeviceFactory to it
+        DeviceBuilder deviceBuilder = new DeviceBuilder();
+        deviceBuilder.deviceBuilder(deviceFactory);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Failed to run the simulation: " + e.getMessage());
+        // create connectionbuilder and pass the connection factory
+        ConnectionBuilder connectionBuilder = new ConnectionBuilder();
+        connectionBuilder.connectionBuilder(connectionFactory);
+
+        // Read and create devices
+        TopologyReader topologyReader = new TopologyReader();
+        List<Object> devices = topologyReader.readObjects(filePath, deviceType, deviceFactory, connectionFactory);
+
+        // Read and create connections
+        List<Object> connections = topologyReader.readObjects(filePath, connectionType, deviceFactory, connectionFactory);
+
+        // Print the list of devices
+        System.out.println("Devices:");
+        for (Object device : devices) {
+            System.out.println(device);
+        }
+
+        // Print the list of connections
+        System.out.println("Connections:");
+        for (Object connection : connections) {
+            System.out.println(connection);
         }
     }
 }
+
+
+
+
+
+
+//        // Create devices using the DeviceBuilder
+//        Device endDevice = deviceBuilder.makeDevice("end");
+//        Device switchDevice = deviceBuilder.makeDevice("switch");
+//        Device routerDevice = deviceBuilder.makeDevice("router");
+//
+//
+//        Connection wiredConnection = connectionBuilder.makeConnection("wired");
+//        Connection wirelessConnection = connectionBuilder.makeConnection("wireless");

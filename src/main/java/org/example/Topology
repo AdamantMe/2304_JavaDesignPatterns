@@ -1,0 +1,11 @@
+{
+  "devices": {
+    "endDevice": "end",
+    "switchDevice": "switch",
+    "routerDevice": "router"
+  },
+  "connections": {
+    "wiredConnection": "wired",
+    "wirelessConnection": "wireless"
+  }
+}

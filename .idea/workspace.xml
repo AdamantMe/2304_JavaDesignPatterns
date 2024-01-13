@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69f053f0-ebf8-4e28-b8e5-d826e5a46c48" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/core/SimulationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/core/SimulationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CAMtable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Connection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ConnectionBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ConnectionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DeviceBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DeviceFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/EndDevice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Router.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/RoutingTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Switch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Topology" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TopologyReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/WiredConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/WirelessConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +42,11 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
@@ -41,15 +61,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/newma/Design Patterns/Topology Factory/Lib/javax.json-1.0.jar/javax.json-1.0.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\newma\OneDrive\Desktop\WDD\ICA\GIT\2304_JavaDesignPatterns\src\main\java\org\example" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Studies\2304 Java DP\ICA\v2\Java_DesignPatterns\src\main\resources" />
     </key>
