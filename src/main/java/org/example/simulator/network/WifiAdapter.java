@@ -1,7 +1,9 @@
-package org.example.simulator.interfaces;
+package org.example.simulator.network;
 
-public class WifiInterface extends NetworkInterface {
-    public WifiInterface(String name, String ipAddress, String mask) {
+import org.example.simulator.interfaces.NetworkInterface;
+
+public class WifiAdapter extends NetworkInterface {
+    public WifiAdapter(String name, String ipAddress, String mask) {
         super(name, ipAddress, mask);
     }
 

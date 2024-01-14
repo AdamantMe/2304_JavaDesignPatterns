@@ -1,7 +1,9 @@
-package org.example.simulator.interfaces;
+package org.example.simulator.network;
 
-public class EthernetInterface extends NetworkInterface {
-    public EthernetInterface(String name, String ipAddress, String mask) {
+import org.example.simulator.interfaces.NetworkInterface;
+
+public class EthernetAdapter extends NetworkInterface {
+    public EthernetAdapter(String name, String ipAddress, String mask) {
         super(name, ipAddress, mask);
     }
 
