@@ -3,12 +3,14 @@ package org.example.simulator.network;
 
 import org.example.simulator.core.Event;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Network {
     private Map<String, Device> devices = new HashMap<>();
-    private Map<String, String> connections = new HashMap<>();
+    private List<Connection> connections = new ArrayList<>();
 
     public void addDevice(Device device) {
         devices.put(device.getId(), device);
@@ -18,39 +20,66 @@ public class Network {
         return devices.get(deviceId);
     }
 
-    public void addConnection(String source, String destination) {
-        connections.put(source, destination);
+    public void addConnection(Connection connection) {
+        connections.add(connection);
     }
 
     public void processEvent(Event event) {
         try {
-            if (event.getEventType() == Event.EventType.PACKET_TRANSFER) {
-                if (event.getSource().isPresent() && event.getDestination().isPresent() && event.getData().isPresent()) {
-                    String sourceId = event.getSource().get();
-                    String destinationId = event.getDestination().get();
-                    String data = event.getData().get();
-
-                    // Forward the packet, according to the connections described in the JSON, until it reaches the destination.
-                    String nextHop = sourceId;
-                    while (!nextHop.equals(destinationId)) {
-                        if (connections.containsKey(nextHop)) {
-                            String finalNextHop = nextHop;
-                            nextHop = connections.get(nextHop);
-                            devices.get(finalNextHop).sendPacket(nextHop, data);
-                        } else {
-                            System.out.println("No connection found from " + nextHop);
-                            break;
-                        }
-                    }
-                } else {
-                    System.out.println("Packet transfer event is missing required information.");
-                }
-            } else if (event.getEventType() == Event.EventType.DEVICE_FAILURE) {
-                // TODO: Add logic for handling device failure
+            switch (event.getEventType()) {
+                case PACKET_TRANSFER:
+                    processPacketTransferEvent(event);
+                    break;
+                case DEVICE_FAILURE:
+                    // TODO: Add logic for handling device failure
+                    break;
+                default:
+                    System.out.println("Unknown event type.");
             }
         } catch (Exception e) {
             System.out.println("Error processing event: " + e.getMessage());
         }
     }
-}
 
+    private void processPacketTransferEvent(Event event) {
+        // Extracting necessary information from the event
+        String sourceId = event.getSource().orElse(null);
+        String destinationId = event.getDestination().orElse(null);
+        String data = event.getData().orElse(null);
+
+        if (sourceId == null || destinationId == null || data == null) {
+            System.out.println("Packet transfer event is missing required information.");
+            return;
+        }
+
+        // Forward the packet through the network from source to destination
+        String currentDeviceId = sourceId;
+        while (!currentDeviceId.equals(destinationId)) {
+            String nextDeviceId = getNextHop(currentDeviceId);
+
+            if (nextDeviceId == null) {
+                System.out.println("No connection found from " + currentDeviceId);
+                break;
+            }
+
+            Device currentDevice = devices.get(currentDeviceId);
+            if (currentDevice != null) {
+                currentDevice.sendPacket(nextDeviceId, data);
+            } else {
+                System.out.println("Device not found: " + currentDeviceId);
+                break;
+            }
+
+            currentDeviceId = nextDeviceId;
+        }
+    }
+
+    public String getNextHop(String source) {
+        for (Connection conn : connections) {
+            if (conn.getSource().equals(source)) {
+                return conn.getDestination();
+            }
+        }
+        return null;
+    }
+}
