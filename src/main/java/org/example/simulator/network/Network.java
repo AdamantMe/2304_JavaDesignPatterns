@@ -2,6 +2,8 @@
 package org.example.simulator.network;
 
 import org.example.simulator.core.Event;
+import org.example.simulator.network.connection.Connection;
+import org.example.simulator.network.device.Device;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,7 +44,6 @@ public class Network {
     }
 
     private void processPacketTransferEvent(Event event) {
-        // Extracting necessary information from the event
         String sourceId = event.getSource().orElse(null);
         String destinationId = event.getDestination().orElse(null);
         String data = event.getData().orElse(null);
@@ -52,26 +53,35 @@ public class Network {
             return;
         }
 
-        // Forward the packet through the network from source to destination
-        String currentDeviceId = sourceId;
-        while (!currentDeviceId.equals(destinationId)) {
-            String nextDeviceId = getNextHop(currentDeviceId);
+        Device sourceDevice = getDevice(sourceId);
+        Device destinationDevice = getDevice(destinationId);
+        Connection connection = getConnectionBetween(sourceId, destinationId);
 
-            if (nextDeviceId == null) {
-                System.out.println("No connection found from " + currentDeviceId);
-                break;
+        if (sourceDevice != null && destinationDevice != null && connection != null) {
+            // Device sends packet to connection
+            sourceDevice.connectTo(connection);
+            connection.sendPacket(sourceId, destinationId, data);
+
+            // Connection 'transmits' the packet
+            String receivedData = connection.receivePacket(destinationId);
+
+            // Destination device receives the packet from connection
+            if (receivedData != null) {
+                destinationDevice.receivePacket(receivedData);
             }
-
-            Device currentDevice = devices.get(currentDeviceId);
-            if (currentDevice != null) {
-                currentDevice.sendPacket(nextDeviceId, data);
-            } else {
-                System.out.println("Device not found: " + currentDeviceId);
-                break;
-            }
-
-            currentDeviceId = nextDeviceId;
+        } else {
+            System.out.println("Packet transfer cannot be completed due to missing devices or connection.");
         }
+    }
+
+    public Connection getConnectionBetween(String sourceId, String destinationId) {
+        // Loop through the connections list and return the matching connection
+        for (Connection conn : connections) {
+            if (conn.getSource().equals(sourceId) && conn.getDestination().equals(destinationId)) {
+                return conn;
+            }
+        }
+        return null; // No connection found
     }
 
     public String getNextHop(String source) {
@@ -81,5 +91,21 @@ public class Network {
             }
         }
         return null;
+    }
+
+    public void connectDevicesToConnections() {
+        for (Connection connection : this.connections) {
+            String sourceId = connection.getSource();
+            String destinationId = connection.getDestination(); // Assuming two-way connection
+            Device sourceDevice = getDevice(sourceId);
+            Device destinationDevice = getDevice(destinationId);
+
+            if (sourceDevice != null) {
+                sourceDevice.connectTo(connection);
+            }
+            if (destinationDevice != null) {
+                destinationDevice.connectTo(connection); // Optional, based on network design
+            }
+        }
     }
 }

@@ -20,7 +20,9 @@ public class Main {
             JSONObject jsonObject = new JSONObject(jsonContent);
 
             SimulationAbstractFactory factory = new SimulationFactory();
+
             Network network = JsonParser.parseNetwork(jsonObject, factory.getDeviceFactory(), factory.getConnectionFactory());
+            network.connectDevicesToConnections(); // Establish connections between "devices" and "connections"
             List<Event> events = JsonParser.parseEvents(jsonObject.getJSONArray("events"), factory.getEventFactory());
 
             SimulationController simulationController = SimulationController.getInstance(events, network);

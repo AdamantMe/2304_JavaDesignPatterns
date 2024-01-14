@@ -1,8 +1,8 @@
 package org.example.simulator.factory;
 
-import org.example.simulator.network.Device;
-import org.example.simulator.network.EndDevice;
-import org.example.simulator.network.Router;
+import org.example.simulator.network.device.Device;
+import org.example.simulator.network.device.EndDevice;
+import org.example.simulator.network.device.Router;
 
 import java.util.HashMap;
 import java.util.Map;

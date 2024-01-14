@@ -4,18 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69f053f0-ebf8-4e28-b8e5-d826e5a46c48" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/ConnectionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/EventFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/SimulationAbstractFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/SimulationFactory.java" afterDir="false" />
+    <list default="true" id="69f053f0-ebf8-4e28-b8e5-d826e5a46c48" name="Changes" comment="Added Factory DP, formatted around a bit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/Connection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/WiredConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/WirelessConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Router.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/ActionEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/DeviceFailureAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/EventActionStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/PacketTransferAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Connection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/DeviceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/DeviceFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/core/SimulationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/core/SimulationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/DeviceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/DeviceFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Connection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Device.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/EndDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/EndDevice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Router.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Switch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Switch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/utils/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/utils/JsonParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/simulation_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/simulation_config.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705079579618</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Factory DP, formatted around a bit">
+      <created>1705246924416</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705246924416</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +134,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Toska's changes" />
     <MESSAGE value="Code responsible for data loss simulation is fixed and working correctly." />
-    <option name="LAST_COMMIT_MESSAGE" value="Code responsible for data loss simulation is fixed and working correctly." />
+    <MESSAGE value="Added Factory DP, formatted around a bit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Factory DP, formatted around a bit" />
   </component>
 </project>

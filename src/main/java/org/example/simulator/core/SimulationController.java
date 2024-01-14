@@ -1,4 +1,3 @@
-// SimulationController.java
 package org.example.simulator.core;
 
 import org.example.simulator.network.Network;

@@ -18,6 +18,7 @@ public class JsonParser {
     public static Network parseNetwork(JSONObject jsonObject, DeviceFactory deviceFactory, ConnectionFactory connectionFactory) {
         Network network = new Network();
         JSONArray devicesJson = jsonObject.getJSONArray("devices");
+        JSONArray connectionsJson = jsonObject.getJSONArray("connections");
 
         for (int i = 0; i < devicesJson.length(); i++) {
             JSONObject deviceJson = devicesJson.getJSONObject(i);
@@ -26,7 +27,6 @@ public class JsonParser {
             network.addDevice(deviceFactory.createDevice(type, id));
         }
 
-        JSONArray connectionsJson = jsonObject.getJSONArray("connections");
         for (int i = 0; i < connectionsJson.length(); i++) {
             JSONObject connectionJson = connectionsJson.getJSONObject(i);
             network.addConnection(connectionFactory.createConnection(connectionJson));

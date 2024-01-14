@@ -26,6 +26,14 @@
     },
     {
       "id": "4",
+      "eventType": "PACKET_TRANSFER",
+      "startTime": "2024-01-10T10:03:00",
+      "source": "DeviceB",
+      "destination": "RouterA",
+      "data": "Response from DeviceB."
+    },
+    {
+      "id": "5",
       "eventType": "DEVICE_FAILURE",
       "startTime": "2024-01-10T10:10:00",
       "device": "RouterC",
@@ -58,18 +66,24 @@
     {
       "source": "DeviceA",
       "destination": "RouterA",
-      "type": "Ethernet"
+      "type": "Wired"
     },
     {
       "source": "RouterA",
       "destination": "RouterB",
-      "type": "Ethernet",
+      "type": "Wired",
       "status": "ACTIVE"
     },
     {
       "source": "RouterB",
       "destination": "DeviceB",
-      "type": "Ethernet",
+      "type": "Wireless",
+      "status": "ACTIVE"
+    },
+    {
+      "source": "DeviceB",
+      "destination": "RouterA",
+      "type": "Wireless",
       "status": "ACTIVE"
     }
   ]
