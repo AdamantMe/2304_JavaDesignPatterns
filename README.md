@@ -31,6 +31,13 @@ This network simulation project simulates the behavior of devices in a computer 
 - Initializes the network, devices, and events.
 - Starts the simulation by invoking the SimulationController.
 
+### Design Patterns Implementation
+- Applied Singleton pattern to the Network class for centralized network management.
+- Utilized Factory/Abstract Factory patterns for creating network devices, connections, and events dynamically.
+- Strategy pattern implemented in event handling to allow different behaviors for packet transfers and receptions.
+- Command pattern used in the SimulationController to encapsulate event processing.
+- Decorator pattern introduced in connection classes to simulate data corruption and loss dynamically.
+
 ## How to Run
 
 1. Create a JSON configuration file with your desired network setup and events.
