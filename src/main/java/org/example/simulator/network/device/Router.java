@@ -17,6 +17,11 @@ public class Router implements Device {
     }
 
     @Override
+    public void processPacket(String sourceMac, String destinationMac) {
+
+    }
+
+    @Override
     public String getId() {
         return id;
     }

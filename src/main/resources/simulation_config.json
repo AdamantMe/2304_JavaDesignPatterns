@@ -5,32 +5,32 @@
       "eventType": "PACKET_TRANSFER",
       "startTime": "2024-01-10T10:00:00",
       "source": "DeviceA",
-      "destination": "RouterA",
-      "data": "Hello, RouterA!"
+      "destination": "SwitchA",
+      "data": "Hello, SwitchA!"
     },
     {
       "id": "2",
       "eventType": "PACKET_TRANSFER",
       "startTime": "2024-01-10T10:01:00",
-      "source": "RouterA",
-      "destination": "RouterB",
-      "data": "Hello, RouterB!"
+      "source": "SwitchA",
+      "destination": "RouterA",
+      "data": "Hello, RouterA!"
     },
     {
       "id": "3",
       "eventType": "PACKET_TRANSFER",
       "startTime": "2024-01-10T10:02:00",
-      "source": "RouterB",
-      "destination": "DeviceB",
-      "data": "Hello, DeviceB!"
+      "source": "RouterA",
+      "destination": "SwitchB",
+      "data": "Hello, SwitchB!"
     },
     {
       "id": "4",
       "eventType": "PACKET_TRANSFER",
       "startTime": "2024-01-10T10:03:00",
-      "source": "DeviceB",
-      "destination": "RouterA",
-      "data": "Response from DeviceB."
+      "source": "SwitchB",
+      "destination": "DeviceB",
+      "data": "Hello, DeviceB!"
     },
     {
       "id": "5",
@@ -58,32 +58,60 @@
       "type": "Router"
     },
     {
-      "id": "RouterC",
-      "type": "Router"
+      "id": "SwitchA",
+      "type": "Switch"
+    },
+    {
+      "id": "SwitchB",
+      "type": "Switch"
     }
   ],
   "connections": [
     {
       "source": "DeviceA",
-      "destination": "RouterA",
+      "destination": "SwitchA",
       "type": "Wired"
     },
     {
+      "source": "SwitchA",
+      "destination": "RouterA",
+      "type": "Wired",
+      "status": "ACTIVE"
+    },
+    {
       "source": "RouterA",
-      "destination": "RouterB",
+      "destination": "SwitchB",
+      "type": "Wired",
+      "status": "ACTIVE"
+    },
+    {
+      "source": "SwitchB",
+      "destination": "DeviceB",
+      "type": "Wired",
+      "status": "ACTIVE"
+    },
+    {
+      "source": "RouterA",
+      "destination": "DeviceA",
       "type": "Wired",
       "status": "ACTIVE"
     },
     {
       "source": "RouterB",
       "destination": "DeviceB",
-      "type": "Wireless",
+      "type": "Wired",
       "status": "ACTIVE"
     },
     {
       "source": "DeviceB",
       "destination": "RouterA",
       "type": "Wireless",
+      "status": "ACTIVE"
+    },
+    {
+      "source": "RouterA",
+      "destination": "RouterB",
+      "type": "Wired",
       "status": "ACTIVE"
     }
   ]

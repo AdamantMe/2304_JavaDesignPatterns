@@ -24,11 +24,20 @@ public class JsonParser {
             JSONObject deviceJson = devicesJson.getJSONObject(i);
             String id = deviceJson.getString("id");
             String type = deviceJson.getString("type");
+
+            //System.out.println("found device: " + type + " - " + id);
             network.addDevice(deviceFactory.createDevice(type, id));
+            //System.out.println("Creating device: " + type + " - " + id);
+
         }
 
         for (int i = 0; i < connectionsJson.length(); i++) {
             JSONObject connectionJson = connectionsJson.getJSONObject(i);
+            String type = connectionJson.getString("type");
+            String source = connectionJson.getString("source");
+            String destination = connectionJson.getString("destination");
+           // System.out.println("Creating Connection: " + type + " source " + source + " destination " + destination);
+
             network.addConnection(connectionFactory.createConnection(connectionJson));
         }
 

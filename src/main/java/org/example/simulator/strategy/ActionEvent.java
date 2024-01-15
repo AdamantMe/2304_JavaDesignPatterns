@@ -1,5 +1,7 @@
 package org.example.simulator.strategy;
 
+import org.example.simulator.network.connection.Connection;
+
 import java.time.LocalDateTime;
 
 public class ActionEvent {
@@ -30,4 +32,6 @@ public class ActionEvent {
     public String getDestination() { return destination; }
     public String getData() { return data; }
     public LocalDateTime getTimestamp() { return timestamp; }
+
+
 }

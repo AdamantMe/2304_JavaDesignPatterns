@@ -10,7 +10,7 @@ public class SimulationController {
 
     private final PriorityQueue<Event> eventQueue;
     private final Network network;
-    private int dataLossCount;
+    private int dataLossCount; // TODO: collect data loss from each event - move into new object?
 
     private SimulationController(List<Event> events, Network network) {
         this.eventQueue = new PriorityQueue<>(events);
@@ -38,12 +38,12 @@ public class SimulationController {
         }
     }
 
-    private boolean shouldSimulateDataLoss() {
+    private boolean shouldSimulateDataLoss() { //TODO change this
         // Data loss is simulated 10% of the time
         return Math.random() < 0.1;
     }
 
-    public void handleDataLoss(Event event) {
+    public void handleDataLoss(Event event) { // TODO change this
         dataLossCount++;
         System.out.println("Data loss detected. Event: " + event.toString());
         System.out.println("Total data loss count: " + dataLossCount);
@@ -52,5 +52,5 @@ public class SimulationController {
 
     public int getDataLossCount() {
         return dataLossCount;
-    }
+    }//TODO change this
 }

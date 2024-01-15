@@ -2,6 +2,7 @@ package org.example.simulator.network.device;
 
 import org.example.simulator.network.connection.Connection;
 import org.example.simulator.strategy.ActionEvent;
+import org.example.simulator.strategy.EventActionStrategy;
 import org.example.simulator.strategy.PacketTransferAction;
 import org.example.simulator.strategy.PacketReceiveAction;
 
@@ -14,6 +15,11 @@ public class EndDevice implements Device {
     }
 
     @Override
+    public void processPacket(String sourceMac, String destinationMac) {
+
+    }
+
+    @Override
     public String getId() {
         return id;
     }
@@ -21,7 +27,11 @@ public class EndDevice implements Device {
     @Override
     public void receivePacket(String data) {
         if (connection != null) {
-            ActionEvent event = new ActionEvent(new PacketReceiveAction());
+            // Ensure that PacketReceiveAction implements EventActionStrategy
+            EventActionStrategy receiveAction = new PacketReceiveAction();
+
+            // Create an ActionEvent with the receive action
+            ActionEvent event = new ActionEvent(receiveAction);
             event.setSource(this.id);
             event.setData(data);
             event.execute();

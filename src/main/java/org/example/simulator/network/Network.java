@@ -4,6 +4,7 @@ package org.example.simulator.network;
 import org.example.simulator.core.Event;
 import org.example.simulator.network.connection.Connection;
 import org.example.simulator.network.device.Device;
+import org.example.simulator.network.device.Switch;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +14,18 @@ import java.util.Map;
 public class Network {
     private Map<String, Device> devices = new HashMap<>();
     private List<Connection> connections = new ArrayList<>();
+    private static Network instance; // Singleton instance
+
+    public Network() {
+        // Private constructor to enforce singleton pattern
+    }
+
+    public static Network getInstance() {
+        if (instance == null) {
+            instance = new Network();
+        }
+        return instance;
+    }
 
     public void addDevice(Device device) {
         devices.put(device.getId(), device);
@@ -20,6 +33,13 @@ public class Network {
 
     public Device getDevice(String deviceId) {
         return devices.get(deviceId);
+    }
+
+    public Switch getSwitch(String switchId) {
+        if (devices.containsKey(switchId) && devices.get(switchId) instanceof Switch) {
+            return (Switch) devices.get(switchId);
+        }
+        return null;
     }
 
     public void addConnection(Connection connection) {
@@ -65,7 +85,7 @@ public class Network {
             // Connection 'transmits' the packet
             String receivedData = connection.receivePacket(destinationId);
 
-            // Destination device receives the packet from connection
+            // Destination device or switch receives the packet from connection
             if (receivedData != null) {
                 destinationDevice.receivePacket(receivedData);
             }

@@ -5,25 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69f053f0-ebf8-4e28-b8e5-d826e5a46c48" name="Changes" comment="Added Factory DP, formatted around a bit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/WiredConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/WirelessConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Router.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/ActionEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/DeviceFailureAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/EventActionStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/PacketTransferAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/CAMtable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/PacketReceiveAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/core/SimulationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/core/SimulationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/ConnectionFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/DeviceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/DeviceFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Connection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Device.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/EndDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/EndDevice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Router.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Switch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Switch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/WirelessConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/WirelessConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Device.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/EndDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/EndDevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Switch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Switch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/ActionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/ActionEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/PacketTransferAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/PacketTransferAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/utils/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/utils/JsonParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/simulation_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/simulation_config.json" afterDir="false" />
     </list>
@@ -86,6 +80,26 @@
       <recent name="D:\Studies\2304 Java DP\ICA\v2\Java_DesignPatterns\src\main\resources" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="Java_DesignPatterns" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -124,7 +138,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

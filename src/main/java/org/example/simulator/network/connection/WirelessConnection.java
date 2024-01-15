@@ -1,3 +1,7 @@
+package org.example.simulator.network.connection;
+
+import org.example.simulator.network.connection.Connection;
+
 import java.util.Random;
 
 public class WirelessConnection implements Connection {

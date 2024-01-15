@@ -3,6 +3,8 @@ package org.example.simulator.factory;
 import org.example.simulator.network.device.Device;
 import org.example.simulator.network.device.EndDevice;
 import org.example.simulator.network.device.Router;
+import org.example.simulator.network.device.Switch;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +17,7 @@ public class DeviceFactory{
         // This makes it easy to add new device types later on, without modifying the factory's internal logic.
         registerDeviceType("EndDevice", EndDevice.class);
         registerDeviceType("Router", Router.class);
+        registerDeviceType("Switch", Switch.class);
     }
 
     public void registerDeviceType(String typeName, Class<? extends Device> deviceType) {
