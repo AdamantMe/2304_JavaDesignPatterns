@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69f053f0-ebf8-4e28-b8e5-d826e5a46c48" name="Changes" comment="Added Factory DP, formatted around a bit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/CAMtable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/PacketReceiveAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/core/SimulationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/core/SimulationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/DeviceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/DeviceFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/WirelessConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/WirelessConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Device.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/EndDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/EndDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Router.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Switch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Switch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/ActionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/ActionEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/PacketTransferAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/strategy/PacketTransferAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/utils/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/utils/JsonParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/simulation_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/simulation_config.json" afterDir="false" />
-    </list>
+    <list default="true" id="69f053f0-ebf8-4e28-b8e5-d826e5a46c48" name="Changes" comment="Added Factory DP, formatted around a bit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
