@@ -9,6 +9,7 @@ import org.example.simulator.strategy.PacketReceiveAction;
 public class EndDevice implements Device {
     private final String id;
     private Connection connection;
+    private String macAddress;
 
     public EndDevice(String id) {
         this.id = id;
@@ -43,6 +44,16 @@ public class EndDevice implements Device {
     @Override
     public void connectTo(Connection connection) {
         this.connection = connection;
+    }
+
+    @Override
+    public void setMACAddress(String macAddress) {
+        this.macAddress = macAddress; // Set the provided MAC address
+    }
+
+    @Override
+    public String getMACAddress() {
+        return macAddress;
     }
 
     @Override

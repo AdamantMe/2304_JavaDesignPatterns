@@ -1,5 +1,6 @@
 package org.example.simulator.factory;
 
+import org.example.simulator.network.MACaddGenerator;
 import org.example.simulator.network.device.Device;
 import org.example.simulator.network.device.EndDevice;
 import org.example.simulator.network.device.Router;
@@ -11,8 +12,11 @@ import java.util.Map;
 
 public class DeviceFactory{
     private Map<String, Class<? extends Device>> deviceTypeRegistry = new HashMap<>();
+    private MACaddGenerator macAddGenerator;
+
 
     public DeviceFactory() {
+        this.macAddGenerator = MACaddGenerator.getInstance();
         // Registering default types allows the factory to create instances of these types dynamically.
         // This makes it easy to add new device types later on, without modifying the factory's internal logic.
         registerDeviceType("EndDevice", EndDevice.class);
@@ -30,6 +34,8 @@ public class DeviceFactory{
             try {
                 // Reflection to create an instance of the device class.
                 Device device = deviceClass.getDeclaredConstructor(String.class).newInstance(deviceId);
+
+                device.setMACAddress(macAddGenerator.generateMACAddress());
 
                 return device;
             } catch (Exception e) {

@@ -9,6 +9,7 @@ import java.util.Map;
 public class Router implements Device {
     private final String id;
     private Connection connection;
+    private String macAddress;
     private Map<String, Connection> routingTable;
 
     public Router(String id) {
@@ -52,6 +53,16 @@ public class Router implements Device {
     @Override
     public void connectTo(Connection connection) {
         this.connection = connection;
+    }
+
+    @Override
+    public void setMACAddress(String macAddress) {
+        this.macAddress = macAddress; // Set the provided MAC address
+    }
+
+    @Override
+    public String getMACAddress() {
+        return macAddress;
     }
 
     public void addRoute(String destinationId, Connection connection) {

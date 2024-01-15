@@ -9,4 +9,8 @@ public interface Device {
     void receivePacket(String data);
     void sendPacket(String destinationId, String data);
     void connectTo(Connection connection);
+
+    void setMACAddress(String generateMACAddress);
+
+    String getMACAddress();
 }

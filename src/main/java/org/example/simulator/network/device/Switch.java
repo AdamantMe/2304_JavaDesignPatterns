@@ -8,6 +8,7 @@ import org.example.simulator.network.Network;
 public class Switch implements Device {
     private CAMtable camTable;
     private final String id;
+    private String macAddress;
 
     public Switch(String id) {
         this.id = id;
@@ -61,5 +62,15 @@ public class Switch implements Device {
     @Override
     public void connectTo(Connection connection) {
         System.out.println("Switch: Connected to " + connection);
+    }
+
+    @Override
+    public void setMACAddress(String macAddress) {
+        this.macAddress = macAddress; // Set the provided MAC address
+    }
+
+    @Override
+    public String getMACAddress() {
+        return macAddress;
     }
 }

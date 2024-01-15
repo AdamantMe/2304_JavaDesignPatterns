@@ -5,6 +5,7 @@ import org.example.simulator.factory.DeviceFactory;
 import org.example.simulator.factory.EventFactory;
 import org.example.simulator.network.Network;
 import org.example.simulator.core.Event;
+import org.example.simulator.network.device.Device;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -26,8 +27,11 @@ public class JsonParser {
             String type = deviceJson.getString("type");
 
             //System.out.println("found device: " + type + " - " + id);
-            network.addDevice(deviceFactory.createDevice(type, id));
+            //network.addDevice(deviceFactory.createDevice(type, id));
+            Device device = deviceFactory.createDevice(type, id);
+            network.addDevice(device);
             //System.out.println("Creating device: " + type + " - " + id);
+            System.out.println("Device " + id + " created with MAC address: " + device.getMACAddress());
 
         }
 
@@ -43,6 +47,7 @@ public class JsonParser {
 
         return network;
     }
+
 
     public static List<Event> parseEvents(JSONArray eventsJson, EventFactory eventFactory) {
         List<Event> events = new ArrayList<>();

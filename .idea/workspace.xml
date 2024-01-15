@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69f053f0-ebf8-4e28-b8e5-d826e5a46c48" name="Changes" comment="Added Factory DP, formatted around a bit" />
+    <list default="true" id="69f053f0-ebf8-4e28-b8e5-d826e5a46c48" name="Changes" comment="Added Factory DP, formatted around a bit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/MACaddGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/BaseConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/ConnectionDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/DataCorruptionDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/DataLossDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/DeviceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/factory/DeviceFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/connection/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Device.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/EndDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/EndDevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Switch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/network/device/Switch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/simulator/utils/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/simulator/utils/JsonParser.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -44,18 +59,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/newma/Design Patterns/Topology Factory/Lib/javax.json-1.0.jar/javax.json-1.0.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/newma/Design Patterns/Topology Factory/Lib/javax.json-1.0.jar/javax.json-1.0.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\newma\OneDrive\Desktop\WDD\ICA\GIT\2304_JavaDesignPatterns\src\main\java\org\example" />
