@@ -33,7 +33,7 @@ public class Network {
                     processPacketTransferEvent(event);
                     break;
                 case DEVICE_FAILURE:
-                    // TODO: Add logic for handling device failure
+                    processDeviceFailureEvent(event);
                     break;
                 default:
                     System.out.println("Unknown event type.");
@@ -71,6 +71,25 @@ public class Network {
             }
         } else {
             System.out.println("Packet transfer cannot be completed due to missing devices or connection.");
+        }
+    }
+
+    private void processDeviceFailureEvent(Event event) {
+        String deviceId = event.getSource().orElse(null);
+
+        if (deviceId == null) {
+            System.out.println("Device failure event is missing required information.");
+            return;
+        }
+
+        Device failedDevice = getDevice(deviceId);
+
+        if (failedDevice != null) {
+            // Simulate device failure
+            System.out.println("Device " + deviceId + " has failed.");
+            devices.remove(deviceId);
+        } else {
+            System.out.println("Device failure event cannot be processed due to missing device.");
         }
     }
 
