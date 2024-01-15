@@ -12,6 +12,7 @@ This network simulation project simulates the behavior of devices in a computer 
 ### SimulationController
 - Manages the simulation and processes events.
 - Uses a priority queue to schedule and execute events in chronological order.
+- Handles data loss and calculates the total data loss count.
 - Processes different event types like PACKET_TRANSFER and DEVICE_FAILURE.
 
 ### JsonParser
