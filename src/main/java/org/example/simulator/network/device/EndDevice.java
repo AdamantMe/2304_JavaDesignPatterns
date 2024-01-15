@@ -3,6 +3,7 @@ package org.example.simulator.network.device;
 import org.example.simulator.network.connection.Connection;
 import org.example.simulator.strategy.ActionEvent;
 import org.example.simulator.strategy.PacketTransferAction;
+import org.example.simulator.strategy.PacketReceiveAction;
 
 public class EndDevice implements Device {
     private final String id;
@@ -19,10 +20,14 @@ public class EndDevice implements Device {
 
     @Override
     public void receivePacket(String data) {
-        ActionEvent event = new ActionEvent(null); // TODO: Add a strategy like in sendPacket
-        event.setSource(this.id); // The device itself is the source of the event
-        event.setData(data);
-        event.execute();
+        if (connection != null) {
+            ActionEvent event = new ActionEvent(new PacketReceiveAction());
+            event.setSource(this.id);
+            event.setData(data);
+            event.execute();
+        } else {
+            System.out.println("No connection available for device " + getId());
+        }
     }
 
     @Override
@@ -38,8 +43,7 @@ public class EndDevice implements Device {
             event.setDestination(destinationId);
             event.setData(data);
             event.execute();
-        } else
-        {
+        } else {
             System.out.println("No connection available for device " + getId());
         }
     }
