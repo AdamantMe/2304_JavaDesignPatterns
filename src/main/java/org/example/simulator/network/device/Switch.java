@@ -45,7 +45,7 @@ public class Switch implements Device {
 
     @Override
     public String getId() {
-        return "Switch1";
+        return id;
     }
 
     @Override
